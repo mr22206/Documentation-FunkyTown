@@ -6,19 +6,39 @@
     margin: 1rem 0;
 }
 
+/* Mode sombre */
 [data-md-color-scheme="slate"] .mermaid {
     background-color: #1e1e1e;
+}
+
+/* Style pour la lightbox */
+.gslide {
+    background: white !important;
+}
+
+.gslide-media {
+    background: white !important;
+}
+
+.glightbox-container {
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.gslide-description {
+    background: white !important;
 }
 
 .glightbox {
     cursor: zoom-in;
     transition: transform 0.2s;
+    background: white !important;
 }
 
 .glightbox:hover {
     transform: scale(1.02);
 }
 
+/* Styles des nœuds Mermaid */
 .mermaid .node rect,
 .mermaid .node circle,
 .mermaid .node ellipse,
@@ -29,4 +49,29 @@
 .mermaid .cluster rect {
     stroke-width: 1px;
     stroke-dasharray: 5;
+}
+
+/* Styles spécifiques pour la lightbox en mode sombre */
+[data-md-color-scheme="slate"] .gslide,
+[data-md-color-scheme="slate"] .gslide-media,
+[data-md-color-scheme="slate"] .gslide-description {
+    background: #1e1e1e !important;
+}
+
+/* Assurer la visibilité du texte */
+.mermaid .label {
+    color: black;
+}
+
+/* Fix pour la lightbox */
+.goverlay {
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.glightbox-clean .gslide-media {
+    box-shadow: none !important;
+}
+
+.glightbox-clean .gslide-description {
+    background: transparent !important;
 } 

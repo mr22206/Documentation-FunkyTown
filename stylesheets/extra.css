@@ -1,0 +1,32 @@
+.mermaid {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 1rem 0;
+}
+
+[data-md-color-scheme="slate"] .mermaid {
+    background-color: #1e1e1e;
+}
+
+.glightbox {
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
+
+.glightbox:hover {
+    transform: scale(1.02);
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+    stroke-width: 2px;
+}
+
+.mermaid .cluster rect {
+    stroke-width: 1px;
+    stroke-dasharray: 5;
+} 

@@ -23,22 +23,28 @@
     margin-bottom: 1rem;
 }
 
+.mermaid-wrapper img {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+}
+
 [data-md-color-scheme="slate"] .mermaid-wrapper {
     background: #f8f9fa;
 }
 
 .glightbox {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: #f0f0f0;
-    border-radius: 4px;
+    display: block;
+    width: 100%;
     text-decoration: none;
     color: #333;
     transition: background 0.2s;
 }
 
 .glightbox:hover {
-    background: #e0e0e0;
+    background: #f5f5f5;
     text-decoration: none;
 }
 
@@ -46,7 +52,7 @@
     background: white;
     padding: 2rem;
     border-radius: 4px;
-    max-width: 90vw;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -79,10 +85,17 @@
 
 .gslide-media {
     background: white !important;
-    max-width: 90vw !important;
-    width: auto !important;
+    width: 90vw !important;
+    max-width: 1600px !important;
     height: auto !important;
     padding: 2rem !important;
+}
+
+.gslide-media img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    max-height: 90vh !important;
 }
 
 .glightbox-container {
@@ -117,7 +130,7 @@
 
 /* Styles pour les éléments cachés */
 [id$="-diagram"] {
-    max-width: 90vw;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2rem;
     background: white;
@@ -126,4 +139,68 @@
 
 [data-md-color-scheme="slate"] [id$="-diagram"] {
     background: #f8f9fa;
+}
+
+/* Zoom controls */
+.gslide-media .zoom-in,
+.gslide-media .zoom-out {
+    display: block !important;
+    position: fixed;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+.gslide-media .zoom-in {
+    right: 70px;
+}
+
+.gslide-media .zoom-out {
+    right: 20px;
+}
+
+/* Bouton pour agrandir */
+.diagram-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+}
+
+.diagram-button::before {
+    content: "🔍";
+    font-size: 1.1rem;
+}
+
+.diagram-button:hover {
+    background: #e0e0e0;
+    text-decoration: none;
+    transform: scale(1.02);
+}
+
+[data-md-color-scheme="slate"] .diagram-button {
+    background: #2c2c2c;
+    border-color: #404040;
+    color: #fff;
+}
+
+[data-md-color-scheme="slate"] .diagram-button:hover {
+    background: #3c3c3c;
 } 

@@ -17,7 +17,6 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -730,51 +729,11 @@
 </tbody>
 </table>
 <h2 id="diagramme">Diagramme<a class="headerlink" href="#diagramme" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>gantt
-    title Planning Organisation
-    dateFormat DD/MM
-    axisFormat %d/%m
-
-    section Planning Initial
-    Élaborer planning GANTT (L4-T1)    :crit, l4t1, 13/05, 2d
-    Lister tâches (L4-T1.1)           :crit, l4t11, after l4t1, 1d
-    Identifier dépendances (L4-T1.2)   :crit, l4t12, after l4t11, 1d
-    Estimer durées (L4-T1.3)          :crit, l4t13, after l4t12, 1d
-    Attribuer responsabilités (L4-T1.4):crit, l4t14, after l4t13, 1d
-    Créer GANTT (L4-T1.5)             :crit, l4t15, after l4t14, 2d
-    Vérifier délais (L4-T1.6)         :crit, l4t16, after l4t15, 1d
-
-    section Configurations
-    Config ESN (L2-T1)                :l2t1, after l4t16, 3d
-    Config Biblio (L2-T2)             :l2t2, after l4t16, 3d
-    Config Engie (L2-T3)              :l2t3, after l4t16, 4d
-    Config Digiplex (L2-T4)           :crit, l2t4, after l4t16, 5d
-    Config Datacenter (L2-T5)         :l2t5, after l4t16, 2d
-    Tests et Validation (L2-T6)       :crit, l2t6, after l2t4, 2d
-
-    section PERT Déploiement
-    Créer PERT (L4-T2)               :crit, l4t2, after l2t6, 3d
-    Définir tâches (L4-T2.1)         :crit, l4t21, after l4t2, 1d
-    Identifier chemins (L4-T2.2)     :crit, l4t22, after l4t21, 1d
-    Calculer temps (L4-T2.3)         :l4t23, after l4t22, 1d
-    Chemin critique (L4-T2.4)        :l4t24, after l4t23, 1d
-    Créer diagramme (L4-T2.5)        :l4t25, after l4t24, 2d
-
-    section Ressources
-    Évaluer temps/ressources (L4-T3)  :crit, l4t3, after l4t25, 2d
-    Évaluer ressources (L4-T3.1)     :crit, l4t31, after l4t3, 1d
-    Identifier contraintes (L4-T3.2)  :l4t32, after l4t31, 1d
-    Ajuster durées (L4-T3.3)         :l4t33, after l4t32, 1d
-    MAJ GANTT (L4-T3.4)              :l4t34, after l4t33, 1d
-    Documentation (L4-T3.5)           :l4t35, after l4t34, 1d
-
-    section Finalisation
-    Vérifier délais (L5-T1)          :crit, l5t1, after l4t35, 2d
-    Évaluer qualité (L5-T2)          :crit, l5t2, after l5t1, 2d
-    Rétrospective (L5-T3)            :crit, l5t3, after l5t2, 1d
-    Documentation (L5-T4)             :crit, l5t4, after l5t3, 1d
-    Présentation (L5-T5)             :crit, l5t5, after l5t4, 2d
-    Communication (L5-T6)             :crit, l5t6, after l5t5, 2d</code></pre>
+<div class="mermaid-wrapper">
+<a class="glightbox" data-description="Diagramme GANTT détaillant l'organisation du projet" data-title="Planning Organisation" href="../../assets/images/diagrams/gantt_organisation.svg">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../assets/images/diagrams/gantt_organisation.svg"><img alt="Planning Organisation GANTT" src="../../assets/images/diagrams/gantt_organisation.svg"/></a>
+</a>
+</div>
 <h2 id="points-de-controle">Points de Contrôle<a class="headerlink" href="#points-de-controle" title="Permanent link">¶</a></h2>
 <ol>
 <li>Planning Initial (13/05 - 14/05)</li>
@@ -906,7 +865,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(() => { lightbox.reload() });
 </script></body>
 </html>

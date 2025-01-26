@@ -17,7 +17,6 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -696,167 +695,11 @@
 </tbody>
 </table>
 <h2 id="diagramme">Diagramme<a class="headerlink" href="#diagramme" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>graph LR
-%% Styles pour un PERT circulaire
-classDef critical fill:#ffcccc,stroke:#000,stroke-width:1px
-classDef normal fill:#ccffcc,stroke:#000,stroke-width:1px
-
-%% Configuration du graphe
-linkStyle default stroke:#000,stroke-width:1px
-
-DC1["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;DC-1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;0&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;2&lt;/div&gt;
-&lt;/div&gt;"]
-
-DC2["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;DC-2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;3.5&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;1.5&lt;/div&gt;
-&lt;/div&gt;"]
-
-ESN1["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;ESN-1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;3&lt;/div&gt;
-&lt;/div&gt;"]
-
-ESN2["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;ESN-2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;2&lt;/div&gt;
-&lt;/div&gt;"]
-
-ESN3["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;ESN-3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;1.5&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;1.5&lt;/div&gt;
-&lt;/div&gt;"]
-
-BIB1["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;BIB-1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;3&lt;/div&gt;
-&lt;/div&gt;"]
-
-BIB2["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;BIB-2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;1.5&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;1.5&lt;/div&gt;
-&lt;/div&gt;"]
-
-BIB3["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;BIB-3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;2&lt;/div&gt;
-&lt;/div&gt;"]
-
-ENG1["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;ENG-1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;3&lt;/div&gt;
-&lt;/div&gt;"]
-
-ENG2["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;ENG-2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;2&lt;/div&gt;
-&lt;/div&gt;"]
-
-ENG3["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;ENG-3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;1.5&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;1.5&lt;/div&gt;
-&lt;/div&gt;"]
-
-ENG4["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;ENG-4&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;3&lt;/div&gt;
-&lt;/div&gt;"]
-
-DIG1["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;DIG-1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;3&lt;/div&gt;
-&lt;/div&gt;"]
-
-DIG2["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;DIG-2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;3&lt;/div&gt;
-&lt;/div&gt;"]
-
-DIG3["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;DIG-3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;2&lt;/div&gt;
-&lt;/div&gt;"]
-
-VAL1["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;VAL-1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;2&lt;/div&gt;
-&lt;/div&gt;"]
-
-VAL2["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;VAL-2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;1.5&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;1.5&lt;/div&gt;
-&lt;/div&gt;"]
-
-VAL3["&lt;div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'&gt;
-  &lt;div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'&gt;VAL-3&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'&gt;1&lt;/div&gt;
-  &lt;div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'&gt;2&lt;/div&gt;
-  &lt;div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'&gt;2&lt;/div&gt;
-&lt;/div&gt;"]
-
-%% Connexions entre les tâches
-DC1 --&gt; DC2
-
-DC2 --&gt; ESN1
-ESN1 --&gt; ESN2
-ESN2 --&gt; ESN3
-
-DC2 --&gt; BIB1
-BIB1 --&gt; BIB2
-BIB2 --&gt; BIB3
-
-DC2 --&gt; ENG1
-ENG1 --&gt; ENG2
-ENG2 --&gt; ENG3
-ENG3 --&gt; ENG4
-
-DC2 --&gt; DIG1
-DIG1 --&gt; DIG2
-DIG2 --&gt; DIG3
-
-ESN3 &amp; BIB3 &amp; ENG4 &amp; DIG3 --&gt; VAL1
-VAL1 --&gt; VAL2
-VAL2 --&gt; VAL3
-
-%% Application des styles
-class DC1,DC2,ESN1,ESN2,DIG1,DIG2,VAL1,VAL2,VAL3 critical
-class BIB1,BIB2,BIB3,ENG1,ENG2,ENG3,ENG4,ESN3,DIG3 normal</code></pre>
+<div class="mermaid-wrapper">
+<a class="glightbox" data-description="Diagramme PERT détaillant les dépendances et le chemin critique du déploiement" data-title="PERT Déploiement" href="../assets/images/diagrams/pert_deploiement.svg">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../assets/images/diagrams/pert_deploiement.svg"><img alt="PERT Déploiement" src="../assets/images/diagrams/pert_deploiement.svg"/></a>
+</a>
+</div>
 <h2 id="legende">Légende<a class="headerlink" href="#legende" title="Permanent link">¶</a></h2>
 <ul>
 <li>En haut : ID de la tâche</li>
@@ -982,7 +825,7 @@ class BIB1,BIB2,BIB3,ENG1,ENG2,ENG3,ENG4,ESN3,DIG3 normal</code></pre>
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(() => { lightbox.reload() });
 </script></body>
 </html>

@@ -1,0 +1,45 @@
+gantt
+    title Planning Organisation
+    dateFormat DD/MM
+    axisFormat %d/%m
+    
+    section Planning Initial
+    Élaborer planning GANTT (L4-T1)    :crit, l4t1, 13/05, 2d
+    Lister tâches (L4-T1.1)           :crit, l4t11, after l4t1, 1d
+    Identifier dépendances (L4-T1.2)   :crit, l4t12, after l4t11, 1d
+    Estimer durées (L4-T1.3)          :crit, l4t13, after l4t12, 1d
+    Attribuer responsabilités (L4-T1.4):crit, l4t14, after l4t13, 1d
+    Créer GANTT (L4-T1.5)             :crit, l4t15, after l4t14, 2d
+    Vérifier délais (L4-T1.6)         :crit, l4t16, after l4t15, 1d
+    
+    section Configurations
+    Config ESN (L2-T1)                :l2t1, after l4t16, 3d
+    Config Biblio (L2-T2)             :l2t2, after l4t16, 3d
+    Config Engie (L2-T3)              :l2t3, after l4t16, 4d
+    Config Digiplex (L2-T4)           :crit, l2t4, after l4t16, 5d
+    Config Datacenter (L2-T5)         :l2t5, after l4t16, 2d
+    Tests et Validation (L2-T6)       :crit, l2t6, after l2t4, 2d
+    
+    section PERT Déploiement
+    Créer PERT (L4-T2)               :crit, l4t2, after l2t6, 3d
+    Définir tâches (L4-T2.1)         :crit, l4t21, after l4t2, 1d
+    Identifier chemins (L4-T2.2)     :crit, l4t22, after l4t21, 1d
+    Calculer temps (L4-T2.3)         :l4t23, after l4t22, 1d
+    Chemin critique (L4-T2.4)        :l4t24, after l4t23, 1d
+    Créer diagramme (L4-T2.5)        :l4t25, after l4t24, 2d
+    
+    section Ressources
+    Évaluer temps/ressources (L4-T3)  :crit, l4t3, after l4t25, 2d
+    Évaluer ressources (L4-T3.1)     :crit, l4t31, after l4t3, 1d
+    Identifier contraintes (L4-T3.2)  :l4t32, after l4t31, 1d
+    Ajuster durées (L4-T3.3)         :l4t33, after l4t32, 1d
+    MAJ GANTT (L4-T3.4)              :l4t34, after l4t33, 1d
+    Documentation (L4-T3.5)           :l4t35, after l4t34, 1d
+    
+    section Finalisation
+    Vérifier délais (L5-T1)          :crit, l5t1, after l4t35, 2d
+    Évaluer qualité (L5-T2)          :crit, l5t2, after l5t1, 2d
+    Rétrospective (L5-T3)            :crit, l5t3, after l5t2, 1d
+    Documentation (L5-T4)             :crit, l5t4, after l5t3, 1d
+    Présentation (L5-T5)             :crit, l5t5, after l5t4, 2d
+    Communication (L5-T6)             :crit, l5t6, after l5t5, 2d

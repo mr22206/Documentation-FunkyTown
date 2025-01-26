@@ -1,0 +1,161 @@
+graph LR
+%% Styles pour un PERT circulaire
+classDef critical fill:#ffcccc,stroke:#000,stroke-width:1px
+classDef normal fill:#ccffcc,stroke:#000,stroke-width:1px
+
+%% Configuration du graphe
+linkStyle default stroke:#000,stroke-width:1px
+
+DC1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>DC-1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>0</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+DC2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>DC-2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>3.5</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1.5</div>
+</div>"]
+
+ESN1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>ESN-1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>3</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+ESN2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>ESN-2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+ESN3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>ESN-3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>1.5</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1.5</div>
+</div>"]
+
+BIB1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>BIB-1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>3</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+BIB2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>BIB-2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>1.5</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1.5</div>
+</div>"]
+
+BIB3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>BIB-3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+ENG1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>ENG-1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>3</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+ENG2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>ENG-2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+ENG3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>ENG-3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>1.5</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1.5</div>
+</div>"]
+
+ENG4["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>ENG-4</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>3</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+DIG1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>DIG-1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>3</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+DIG2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>DIG-2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>3</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+DIG3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>DIG-3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+VAL1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>VAL-1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+VAL2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>VAL-2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>1.5</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1.5</div>
+</div>"]
+
+VAL3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>VAL-3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+%% Connexions entre les tâches
+DC1 --> DC2
+    
+DC2 --> ESN1
+ESN1 --> ESN2
+ESN2 --> ESN3
+    
+DC2 --> BIB1
+BIB1 --> BIB2
+BIB2 --> BIB3
+    
+DC2 --> ENG1
+ENG1 --> ENG2
+ENG2 --> ENG3
+ENG3 --> ENG4
+    
+DC2 --> DIG1
+DIG1 --> DIG2
+DIG2 --> DIG3
+    
+ESN3 & BIB3 & ENG4 & DIG3 --> VAL1
+VAL1 --> VAL2
+VAL2 --> VAL3
+
+%% Application des styles
+class DC1,DC2,ESN1,ESN2,DIG1,DIG2,VAL1,VAL2,VAL3 critical
+class BIB1,BIB2,BIB3,ENG1,ENG2,ENG3,ENG4,ESN3,DIG3 normal

@@ -1,0 +1,11 @@
+graph TD
+    R1[Router 1] --- SW1[Switch 1]
+    R1 --- R2[Router 2]
+    R2 --- SW2[Switch 2]
+    SW1 --- SW2
+    
+    classDef router fill:#f96,stroke:#333,stroke-width:2px;
+    classDef switch fill:#69f,stroke:#333,stroke-width:2px;
+    
+    class R1,R2 router;
+    class SW1,SW2 switch; 

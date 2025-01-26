@@ -8,34 +8,50 @@
 
 /* Mode sombre */
 [data-md-color-scheme="slate"] .mermaid {
-    background-color: #1e1e1e;
+    background-color: #f8f9fa;
 }
 
-/* Style pour la lightbox */
-.gslide {
-    background: white !important;
+.mermaid-container {
+    margin: 2rem 0;
 }
 
-.gslide-media {
-    background: white !important;
+.mermaid-wrapper {
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
-.glightbox-container {
-    background: rgba(0, 0, 0, 0.9) !important;
-}
-
-.gslide-description {
-    background: white !important;
+[data-md-color-scheme="slate"] .mermaid-wrapper {
+    background: #f8f9fa;
 }
 
 .glightbox {
-    cursor: zoom-in;
-    transition: transform 0.2s;
-    background: white !important;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #f0f0f0;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.2s;
 }
 
 .glightbox:hover {
-    transform: scale(1.02);
+    background: #e0e0e0;
+    text-decoration: none;
+}
+
+.mermaid-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 4px;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+[data-md-color-scheme="slate"] .mermaid-content {
+    background: #f8f9fa;
 }
 
 /* Styles des nœuds Mermaid */
@@ -51,16 +67,32 @@
     stroke-dasharray: 5;
 }
 
-/* Styles spécifiques pour la lightbox en mode sombre */
-[data-md-color-scheme="slate"] .gslide,
-[data-md-color-scheme="slate"] .gslide-media,
-[data-md-color-scheme="slate"] .gslide-description {
-    background: #1e1e1e !important;
-}
-
 /* Assurer la visibilité du texte */
 .mermaid .label {
     color: black;
+}
+
+/* Styles GLightbox */
+.gslide {
+    background: white !important;
+}
+
+.gslide-media {
+    background: white !important;
+    max-width: 90vw !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 2rem !important;
+}
+
+.glightbox-container {
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Mode sombre GLightbox */
+[data-md-color-scheme="slate"] .gslide,
+[data-md-color-scheme="slate"] .gslide-media {
+    background: #f8f9fa !important;
 }
 
 /* Fix pour la lightbox */
@@ -72,6 +104,26 @@
     box-shadow: none !important;
 }
 
-.glightbox-clean .gslide-description {
-    background: transparent !important;
+/* Styles pour GLightbox */
+.gslide-inline {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+[data-md-color-scheme="slate"] .gslide-inline {
+    background: #f8f9fa;
+}
+
+/* Styles pour les éléments cachés */
+[id$="-diagram"] {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 4px;
+}
+
+[data-md-color-scheme="slate"] [id$="-diagram"] {
+    background: #f8f9fa;
 } 

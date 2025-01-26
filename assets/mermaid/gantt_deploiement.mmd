@@ -1,0 +1,35 @@
+gantt
+    title Planning Déploiement
+    dateFormat DD/MM
+    axisFormat %d/%m
+    
+    section Datacenter
+    Config Initial (DC-1)     :crit, dc1, 13/05, 2d
+    Config Services (DC-2)    :dc2, after dc1, 1d
+    
+    section ESN
+    Config Base (ESN-1)       :esn1, after dc2, 2d
+    Config Services (ESN-2)   :crit, esn2, after esn1, 1d
+    Config Sécurité (ESN-3)   :esn3, after esn2, 1d
+    
+    section Bibliothèque
+    Config Base (BIB-1)       :bib1, after dc2, 2d
+    Config Wifi (BIB-2)       :bib2, after bib1, 1d
+    Config Postes (BIB-3)     :bib3, after bib2, 1d
+    
+    section Engie
+    Config Base (ENG-1)       :eng1, after dc2, 2d
+    Config DHCP/DNS (ENG-2)   :crit, eng2, after eng1, 1d
+    Config Wifi (ENG-3)       :eng3, after eng2, 1d
+    Config Postes (ENG-4)     :eng4, after eng3, 2d
+    
+    section Digiplex
+    Config Base (DIG-1)       :dig1, after dc2, 2d
+    Config VLANs (DIG-2)      :crit, dig2, after dig1, 2d
+    Config Wifi (DIG-3)       :dig3, after dig2, 1d
+    
+    section Validation
+    Tests Connectivité (VAL-1) :crit, val1, after eng4 dig3 esn3 bib3, 2d
+    Tests Services (VAL-2)     :val2, after val1, 1d
+    Documentation (VAL-3)      :val3, after val2, 2d
+```

@@ -1,0 +1,11 @@
+graph LR
+    A[Plan d'adressage] --> B[Architecture]
+    B --> C[Datacenter]
+    C --> D[Sites]
+    D --> E[Tests]
+    
+    classDef critical fill:#f96,stroke:#333;
+    classDef normal fill:#69f,stroke:#333;
+    
+    class C,D critical;
+    class A,B,E normal; 

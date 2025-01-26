@@ -1,0 +1,265 @@
+graph LR
+%% Styles pour un PERT circulaire
+classDef critical fill:#ffcccc,stroke:#000,stroke-width:1px
+classDef normal fill:#ccffcc,stroke:#000,stroke-width:1px
+
+%% Configuration du graphe
+linkStyle default stroke:#000,stroke-width:1px
+
+L4-T1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>0</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L4-T1.1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T1.1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>3</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T1.2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T1.2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>4</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T1.3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T1.3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>4</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>5</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T1.4["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T1.4</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>5</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>6</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T1.5["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T1.5</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>6</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>8</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L4-T1.6["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T1.6</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>8</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>9</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L2-T1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L2-T1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>9</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>12</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+L2-T2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L2-T2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>9</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>12</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+L2-T3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L2-T3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>9</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>13</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>4</div>
+</div>"]
+
+L2-T4["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L2-T4</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>9</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>14</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>5</div>
+</div>"]
+
+L2-T5["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L2-T5</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>9</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>11</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L2-T6["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L2-T6</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>14</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>16</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L4-T2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>16</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>19</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>3</div>
+</div>"]
+
+L4-T2.1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T2.1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>19</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>20</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T2.2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T2.2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>20</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>21</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T2.3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T2.3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>21</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>22</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T2.4["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T2.4</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>22</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>23</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T2.5["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T2.5</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>23</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>25</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L4-T3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>25</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>27</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L4-T3.1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T3.1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>27</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>28</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T3.2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T3.2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>28</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>29</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T3.3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T3.3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>29</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>30</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T3.4["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T3.4</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>30</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>31</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L4-T3.5["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L4-T3.5</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>31</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>32</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L5-T1["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L5-T1</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>33</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>35</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L5-T2["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L5-T2</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>35</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>37</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L5-T3["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L5-T3</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>37</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>38</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L5-T4["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L5-T4</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>38</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>39</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>1</div>
+</div>"]
+
+L5-T5["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L5-T5</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>39</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>41</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+L5-T6["<div style='width: 70px; height: 70px; border-radius: 50%; border: 1px solid black; position: relative; background: white;'>
+  <div style='position: absolute; width: 100%; top: 0; left: 0; text-align: center; padding-top: 5px;'>L5-T6</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; left: 0; transform: translateY(-50%); border-right: 1px solid black; display: flex; align-items: center; justify-content: center;'>41</div>
+  <div style='position: absolute; width: 50%; height: 50%; top: 50%; right: 0; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;'>43</div>
+  <div style='position: absolute; width: 100%; bottom: 5px; left: 0; text-align: center;'>2</div>
+</div>"]
+
+%% Connexions entre les tâches
+L4-T1 --> L4-T1.1
+L4-T1.1 --> L4-T1.2
+L4-T1.2 --> L4-T1.3
+L4-T1.3 --> L4-T1.4
+L4-T1.4 --> L4-T1.5
+L4-T1.5 --> L4-T1.6
+
+L4-T1.6 --> L2-T1
+L4-T1.6 --> L2-T2
+L4-T1.6 --> L2-T3
+L4-T1.6 --> L2-T4
+L4-T1.6 --> L2-T5
+
+L2-T1 & L2-T2 & L2-T3 & L2-T4 & L2-T5 --> L2-T6
+
+L2-T6 --> L4-T2
+L4-T2 --> L4-T2.1
+L4-T2.1 --> L4-T2.2
+L4-T2.2 --> L4-T2.3
+L4-T2.3 --> L4-T2.4
+L4-T2.4 --> L4-T2.5
+
+L4-T2.5 --> L4-T3
+L4-T3 --> L4-T3.1
+L4-T3.1 --> L4-T3.2
+L4-T3.2 --> L4-T3.3
+L4-T3.3 --> L4-T3.4
+L4-T3.4 --> L4-T3.5
+
+L4-T3.5 --> L5-T1
+L5-T1 --> L5-T2
+L5-T2 --> L5-T3
+L5-T3 --> L5-T4
+L5-T4 --> L5-T5
+L5-T5 --> L5-T6
+
+%% Application des styles
+class L4-T1,L4-T1.1,L4-T1.2,L4-T1.3,L4-T1.4,L4-T1.5,L4-T1.6,L2-T4,L2-T6,L4-T2,L4-T2.1,L4-T2.2,L4-T3,L4-T3.1,L5-T1,L5-T2,L5-T3,L5-T4,L5-T5,L5-T6 critical
+class L2-T1,L2-T2,L2-T3,L2-T5,L4-T2.3,L4-T2.4,L4-T2.5,L4-T3.2,L4-T3.3,L4-T3.4,L4-T3.5 normal

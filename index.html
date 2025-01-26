@@ -16,7 +16,6 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -848,20 +847,10 @@
 <h2 id="guide-de-lecture-des-diagrammes">Guide de Lecture des Diagrammes<a class="headerlink" href="#guide-de-lecture-des-diagrammes" title="Permanent link">¶</a></h2>
 <h3 id="diagrammes-reseau">Diagrammes Réseau<a class="headerlink" href="#diagrammes-reseau" title="Permanent link">¶</a></h3>
 <p>Les diagrammes réseau utilisent les conventions suivantes :</p>
-<div class="glightbox" data-type="inline">
-<div class="mermaid">
-graph TD
-    R1[Router 1] --- SW1[Switch 1]
-    R1 --- R2[Router 2]
-    R2 --- SW2[Switch 2]
-    SW1 --- SW2
-
-    classDef router fill:#f96,stroke:#333,stroke-width:2px;
-    classDef switch fill:#69f,stroke:#333,stroke-width:2px;
-
-    class R1,R2 router;
-    class SW1,SW2 switch;
-</div>
+<div class="mermaid-wrapper">
+<a class="glightbox" data-description="Illustration des conventions utilisées dans les diagrammes réseau" data-title="Exemple de Diagramme Réseau" href="assets/images/diagrams/network_example.svg">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="assets/images/diagrams/network_example.svg"><img alt="Exemple de Diagramme Réseau" src="assets/images/diagrams/network_example.svg"/></a>
+</a>
 </div>
 <p><strong>Légende :</strong>
 - Rectangles : Équipements réseau
@@ -874,40 +863,17 @@ graph TD
   - Rouge : Liens critiques</p>
 <h3 id="diagramme-gantt">Diagramme GANTT<a class="headerlink" href="#diagramme-gantt" title="Permanent link">¶</a></h3>
 <p>Exemple de planning avec Mermaid :</p>
-<div class="glightbox" data-type="inline">
-<div class="mermaid">
-gantt
-    title Planning FunkyTown
-    dateFormat  YYYY-MM-DD
-
-    section Infrastructure
-    Plan d'adressage      :2024-01-01, 7d
-    Architecture réseau   :2024-01-08, 10d
-
-    section Déploiement
-    Datacenter           :2024-01-18, 14d
-    Sites distants       :2024-02-01, 21d
-
-    section Tests
-    Validation          :2024-02-22, 7d
-</div>
+<div class="mermaid-wrapper">
+<a class="glightbox" data-description="Exemple de planning du projet FunkyTown" data-title="Exemple de Planning" href="assets/images/diagrams/gantt_example.svg">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="assets/images/diagrams/gantt_example.svg"><img alt="Exemple de Planning GANTT" src="assets/images/diagrams/gantt_example.svg"/></a>
+</a>
 </div>
 <h3 id="diagramme-pert">Diagramme PERT<a class="headerlink" href="#diagramme-pert" title="Permanent link">¶</a></h3>
 <p>Exemple de dépendances avec Mermaid :</p>
-<div class="glightbox" data-type="inline">
-<div class="mermaid">
-graph LR
-    A[Plan d'adressage] --&gt; B[Architecture]
-    B --&gt; C[Datacenter]
-    C --&gt; D[Sites]
-    D --&gt; E[Tests]
-
-    classDef critical fill:#f96,stroke:#333;
-    classDef normal fill:#69f,stroke:#333;
-
-    class C,D critical;
-    class A,B,E normal;
-</div>
+<div class="mermaid-wrapper">
+<a class="glightbox" data-description="Exemple de diagramme PERT montrant les dépendances entre tâches" data-title="Exemple de PERT" href="assets/images/diagrams/pert_example.svg">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="assets/images/diagrams/pert_example.svg"><img alt="Exemple de Diagramme PERT" src="assets/images/diagrams/pert_example.svg"/></a>
+</a>
 </div>
 <h2 id="vue-densemble">Vue d'Ensemble<a class="headerlink" href="#vue-densemble" title="Permanent link">¶</a></h2>
 <p>FunkyTown est un projet de déploiement réseau multi-sites comprenant :
@@ -1128,28 +1094,7 @@ graph LR
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(() => { lightbox.reload() });
-</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
-mermaid.initialize({
-    securityLevel: "loose",
-    theme: "default",
-    maxTextSize: 50000,
-    startOnLoad: true,
-    sequence: {
-        useMaxWidth: true,
-        width: "100%"
-    },
-    flowchart: {
-        useMaxWidth: true,
-        htmlLabels: true,
-        curve: "basis"
-    },
-    gantt: {
-        useMaxWidth: true
-    },
-    pie: {
-        useMaxWidth: true
-    }
-});</script></body>
+</script></body>
 </html>
